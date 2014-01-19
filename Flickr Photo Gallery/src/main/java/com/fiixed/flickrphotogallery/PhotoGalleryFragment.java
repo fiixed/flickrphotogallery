@@ -41,12 +41,7 @@ public class PhotoGalleryFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... params) {
-            try {
-                String result = new FlickrFetcher().getUrl("http://www.google.com");
-                Log.i(TAG, "Fetched contents of URL: " + result);
-            } catch (IOException ioe) {
-                Log.e(TAG, "Failed to fetch URL: ", ioe);
-            }
+            new FlickrFetcher().fetchItems();
             return null;
         }
     }
